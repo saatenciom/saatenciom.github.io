@@ -47,6 +47,9 @@
                                 name="firstname"
                                 required
                                 placeholder="No special characters">
+								pattern="[a-zA-Z']{1,30}"
+    							onblur="validateFname()"
+								<span class="error" id="fname-error"></span>
                     </td>
                     <td valign="top" align="left" width="20%">
                             <input type="text"
