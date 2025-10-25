@@ -46,24 +46,30 @@
                                 id="fname"
                                 name="firstname"
                                 required
-                                placeholder="No special characters">
+                                placeholder="No special characters"
 								pattern="[a-zA-Z']{1,30}"
-    							onblur="validateFname()"
-								<span class="error" id="fname-error"></span>
+    							onblur="validatefname()">
+								<span class="error" id="fnameerror"></span>
                     </td>
                     <td valign="top" align="left" width="20%">
                             <input type="text"
                                     maxlength="1"
                                     id="midinitial"
                                     name="middleinitial"
-                                    placeholder="Optional">
+                                    placeholder="Optional"
+									pattern="[a-zA-Z']{0,1}"
+									onblur="validatemidnitial()">
+									<span class="error" id="miderror"></span>
                     </td>
                     <td valign="top" align="left" width="20%">
                             <input type="text"
                                     maxlength="30"
                                     id="lname"
                                     name="lastname"
-                                    placeholder="No special characters">
+                                    placeholder="No special characters"
+									pattern="[a-zA-Z']{1,30}"
+    								onblur="validateFname()">
+									<span class="error" id="fnameerror"></span>
                     </td>
                 </tr>  
             </table>
@@ -76,16 +82,22 @@
                         <td valign="top" align="left" width="20%">
                                 <input type="date"
                                         id="DOB"
-                                        name="address line 1"
+                                        name="DOB"
                                         required
-                                        placeholder="MM/DD/YYYY">
+                                        placeholder="MM/DD/YYYY"
+										onblur="validateDob()"
+								>
+										<span class="error" id="DOBerror"></span>
                         </td>
                         <td valign="top" align="left" width="20%">
                                 <input type="password"
                                         maxlength="9"
                                         id="SSN"
                                         name="social security number"
-                                        placeholder="For US patients">
+                                        placeholder="For US patients"
+										onblur="validateSSN()"
+								>
+										<span class="error" id="SSN-error"></span>
                         </td>
                     </tr>
             </table>
@@ -96,15 +108,20 @@
                 name="address" 
                 required 
                 maxlength="30" 
-                placeholder="Address line 1"><br>
-
+                placeholder="Address line 1"
+				onblur="validateAddress1()"><br>
+				<span class="error" id="address-error"></span>
+				
                 <label for="address2">Address 2</label><br>
 
                 <input type="text" 
                 id="address2" 
                 name="address2"
                 maxlength="30" 
-                placeholder="Apt/Suite/Unit #"><br>
+                placeholder="Apt/Suite/Unit #"
+				onblur="validateAddress2()">
+				<br>
+				<span class="error" id="address2error"></span>
             </form>
             <table width=100%>
                     <tr valign="top" align="left" width="20%">
@@ -182,20 +199,28 @@
                                     id="zip"
                                     name="zip"
                                     maxlength="5"
-                                    required>
+                                    required
+									onblur="validatezip()"
+							>
+									<span class="error" id="ziperror"></span>
                         </td>
             </table> 
             <table width=100%>
                 <tr valign="top" align="left" width="20%">
                     <th>Email Address</th>
                     <th>Username</th>
+					<th>Phone Number</th>
                 </tr>
                 <tr>
                     <td valign="top" align="left" width="20%">
                         <input type="email"
                                 id="email"
                                 name="email"
-                                required>
+                                required
+								onblur="validateemail()"
+								pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,20}$"
+						>
+								<span class="error" id="emailerror"> </span>
                     </td>
                     <td valign="top" align="left" width="20%">
                         <input type="text"
@@ -205,6 +230,16 @@
                                 maxlength="20"
                         >
                     </td>
+					<td>
+						<input type="phone"
+								id="phone"
+								name="phone"
+								required
+								pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+								onblur="validatephone()">
+					</td>
+							<span class="error" id="phoneerror"></span>
+					
                 </tr>
             </table>
             <table width=100%>
