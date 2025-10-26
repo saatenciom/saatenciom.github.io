@@ -167,7 +167,7 @@ function validatepassword()
    if (!password.match(/[A-Z]/)) errorMessage.push("Uppercase letter missing");
    if (!password.match(/[0-9]/)) errorMessage.push("Number missing");
    if (!password.match(/[!\@#\$%&*\-_\\.+\(\)]/)) errorMessage.push("Special character missing");
-   if (password.includes(un)) errorMessage.push("Username detected);
+   if (password.includes(un)) errorMessage.push("Username detected");
  
 }
 
