@@ -184,8 +184,4 @@ function checkpassword()() {
 }
 
 
-function removeReview() {
-    document.getElementById("displayData").innerHTML = "";
-}
-
 
