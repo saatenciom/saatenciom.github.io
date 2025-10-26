@@ -77,7 +77,7 @@ function validatezip()
         zip = zip.slice(0, 5);
     }
 
-    zipval;.value = zip;
+    zipval.value = zip;
     document.getElementById("ziperror").innerHTML = "";
     return true;
  
@@ -113,7 +113,7 @@ function validatephone()
    }
    else
    {
-    document.getElementById("emailerror").innerHTML= "";
+    document.getElementById("phoneerror").innerHTML= "";
     return true;
    }
  
@@ -122,7 +122,7 @@ function validatephone()
 function validateUN() 
 {
     un = document.getElementById("username").value.toLowerCase();
-    document.getElementById("uid").value = un;
+    document.getElementById("username").value = un;
 
     if (un.length == 0) 
     {
