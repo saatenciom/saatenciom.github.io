@@ -14,7 +14,7 @@ document.getElementById("today").innerHTML = text;
 function validatedob() 
 {
     dob = document.getElementById("DOB");
-    let date = new Date(DOB.value);
+    let date = new Date(dob.value);
     let maxDate = new Date().setFullYear(new Date().getFullYear() - 120);
 
     if (date > new Date()) 
