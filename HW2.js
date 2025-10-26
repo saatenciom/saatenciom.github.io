@@ -1,6 +1,6 @@
  /*
     Name: Simon Atencio Machado
-    File: Homework1.js
+    File: HW2.js
     Date created: October 24, 2025
     Date last edit: October 26, 2025
     Version: 1
@@ -182,6 +182,33 @@ function checkpassword()() {
         return true;
     }
 }
+
+function CheckData() {
+    var data = document.getElementById("review");
+    var output = "<table class='output'><th colspan = '3'> Review Your Information:</th>";
+    for (let i = 0; i < data.length; i++) {
+        if (data.elements[i].value !== "") {
+            switch (data.elements[i].type) {
+                case "checkbox":
+                    if (data.elements[i].checked) {
+                        output += `<tr><td align='right'>${data.elements[i].name}</td><td>&#x2713;</td></tr>`;
+                    }
+                    break;
+                case "radio":
+                    if (data.elements[i].checked) {
+                        output += `<tr><td align='right'>${data.elements[i].name}</td><td>${data.elements[i].value}</td></tr>`;
+                    }
+                    break;
+                default:
+                    output += `<tr><td align='right'>${data.elements[i].name}</td><td>${data.elements[i].value}</td></tr>`;
+            }
+        }
+    }
+    output += "</table>";
+    document.getElementById("displayData").innerHTML = output;
+}
+
+
 
 
 
