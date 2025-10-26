@@ -62,15 +62,18 @@ function validatezip()
          const zipval = document.getElementById("zip");
          let zip = zipval.value.replace(/[^\d-]/g, "");
 
-    if (!zip) {
+    if (!zip) 
+    {
         document.getElementById("ziperror").innerHTML = 
         "This is a required field";
         return false;
     }
 
-    if (zip.length > 5) {
+    if (zip.length > 5) 
+    {
         zip = zip.slice(0, 5) + "-" + zip.slice(5, 9);
-    } else {
+    } else 
+    {
         zip = zip.slice(0, 5);
     }
 
@@ -168,22 +171,53 @@ function validatepassword()
  
 }
 
-function checkpassword()() {
+function checkpassword()
+{
     paswword1 = document.getElementById("password").value;
     password2 = document.getElementById("password2").value;
 
-    if (password1 !== password2) {
+    if (password1 !== password2) 
+    {
         document.getElementById("passwordcheckerror").innerHTML = 
         "Passwords are not the same";
         return false;
-    } else {
+    } else 
+    {
         document.getElementById("passwordcheckerror").innerHTML = 
         "Good";
         return true;
     }
 }
-
-
+function CheckData() 
+{
+    var data = document.getElementById("review");
+    var output = "<table class='output'><th colspan = '3'> Review Your Information:</th>";
+    for (let i = 0; i < data.length; i++) 
+    {
+        if (data.elements[i].value !== "") 
+        {
+            switch (data.elements[i].type) 
+            {
+                case "checkbox":
+                    if (data.elements[i].checked) 
+                    {
+                        output += `<tr><td align='right'>${data.elements[i].name}</td><td>&#x2713;</td></tr>`;
+                    }
+                    break;
+                case "radio":
+                    if (data.elements[i].checked) 
+                    {
+                        output += `<tr><td align='right'>${data.elements[i].name}</td><td>${data.elements[i].value}</td></tr>`;
+                    }
+                    break;
+                default:
+                    output += `<tr><td align='right'>${data.elements[i].name}</td><td>${data.elements[i].value}</td></tr>`;
+            }
+        }
+    }
+    output += "</table>";
+    document.getElementById("displayData").innerHTML = output;
+}
 
 
 
