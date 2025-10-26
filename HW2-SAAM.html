@@ -227,8 +227,10 @@
                                 id="username"
                                 name="username"
                                 required
-                                maxlength="20"
+                                maxlength="30"
+								onblur="validateUN()"
                         >
+								<span class="error" id="UNerror"></span>
                     </td>
 					<td>
 						<input type="phone"
@@ -264,11 +266,11 @@
                         <input type="password"
                                 maxlength="8"
                                 required
-                                id="password"
-                                name="password"
-								onblur="confirmpassword()"
-								oninput="confirmpassword()"
-								onfocus="confirmpassword()"
+                                id="password2"
+                                name="password2"
+								onblur="checkpassword()"
+								oninput="checkpassword()"
+								onfocus="checkpassword()"
                         >
 								<span class="error" id="passwordcheckerror"></span>
                     </td>
@@ -424,11 +426,11 @@
 										    name="review"
 										    id="review"
 										    value="Review"
-										    onclick="reviewInput()"
+										    onclick="CheckData()"
 									/>
                                 </center>
 								<center>
-   									 <p id="showInput"></p>
+   									 <p id="displayData"></p>
 								</center>
                             </td>
                     </tr>
