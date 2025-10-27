@@ -190,7 +190,7 @@ function checkpassword()
 }
 function CheckData() 
 {
-    var data = document.getElementById("review");
+    var data = document.getElementById("wholeform");
     var output = "<table class='output'><th colspan = '3'> Check the data entered</th>";
     for (let i = 0; i < data.length; i++) 
     {
