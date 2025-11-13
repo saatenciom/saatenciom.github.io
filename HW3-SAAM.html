@@ -1,1 +1,448 @@
+ <!DOCTYPE html>
+ <!--
+    Name: Simon Atencio Machado
+    File: saatenciom.github.io/HW3-SAAM.html
+    Date created: November 13, 2025
+    Date last edit: November 14, 2025
+    Version: 1
+    Description: Homework 3 for MIS 3371, Registration form.
+-->
+<html lang="en">
+    <head>
+        <title> Homework 2 MIS 3371 SAAM</title>
+        <link rel="stylesheet" href="Styles-HW2.css">
+    </head>
+    <body name="wholeform" id="wholeform">
+        <header>
+            <table width=100%>
+                <tr>
+                    <td valign="top" align="left" width="20%">
+                        <div class="image">
+                            <img align="center" src="Asclepea_Logo.png" alt="Logo de Asclepea" width="70xp" id="logo"
+                        </div>
+                    </td>
+                    <td>
+                        <h2>
+                            Asclepea Hospital
+                        </h2>
+                    </td>
+                    <td valign="bottom" align="right" width=20%>
+                        <p>Date: <span id="today"></span></p>
+                    </td>
+                </tr>
+            </table>
+        </header>
+        <h2> Registration Form </h2>
+            <table width=100%>
+                <tr valign="top" align="left" width="20%">
+                    <th>First Name</th>
+                    <th>M.I.</th>
+                    <th>Last Name</th>
+                </tr>
+                <tr>
+                    <td valign="top" align="left" width="20%">
+                        <input type="text"
+                                maxlength="30"
+                                id="fname"
+                                name="firstname"
+                                required
+                                placeholder="No special characters"
+								pattern="[a-zA-Z']{1,30}"
+    							onblur="validatefname()">
+								<span class="error" id="fnameerror"></span>
+                    </td>
+                    <td valign="top" align="left" width="20%">
+                            <input type="text"
+                                    maxlength="1"
+                                    id="midinitial"
+                                    name="middleinitial"
+                                    placeholder="Optional"
+									pattern="[a-zA-Z']{0,1}"
+									onblur="validatemidnitial()">
+									<span class="error" id="miderror"></span>
+                    </td>
+                    <td valign="top" align="left" width="20%">
+                            <input type="text"
+                                    maxlength="30"
+                                    id="lname"
+                                    name="lastname"
+                                    placeholder="No special characters"
+									pattern="[a-zA-Z']{1,30}"
+    								onblur="validateFname()">
+									<span class="error" id="fnameerror"></span>
+                    </td>
+                </tr>  
+            </table>
+            <table width=100%>
+                    <tr valign="top" align="left" width="20%">
+                        <th>Date of Birth</th>
+                        <th>SSN</th>
+                    </tr>
+                    <tr>
+                        <td valign="top" align="left" width="20%">
+                                <input type="date"
+                                        id="DOB"
+                                        name="DOB"
+                                        required
+                                        placeholder="MM/DD/YYYY"
+										onblur="validatedob()"
+								>
+										<span class="error" id="DOBerror"></span>
+                        </td>
+                        <td valign="top" align="left" width="20%">
+                                <input type="password"
+                                        maxlength="9"
+                                        id="SSN"
+                                        name="social security number"
+                                        placeholder="For US patients"
+										onblur="validateSSN()"
+								>
+										<span class="error" id="SSNerror"></span>
+                        </td>
+                    </tr>
+            </table>
+            <form valign="top" align="left" width="20%">
+                <label for="address">Address</label><br>
+                <input type="text" 
+                id="address" 
+                name="address" 
+                required 
+                maxlength="30" 
+                placeholder="Address line 1"
+				onblur="validateaddress()"><br>
+				<span class="error" id="address-error"></span>
+				
+                <label for="address2">Address 2</label><br>
 
+                <input type="text" 
+                id="address2" 
+                name="address2"
+                maxlength="30" 
+                placeholder="Apt/Suite/Unit #"
+				onblur="validateaddress2()">
+				<br>
+				<span class="error" id="address2error"></span>
+            </form>
+            <table width=100%>
+                    <tr valign="top" align="left" width="20%">
+                        <th>City</th>
+                        <th>State</th>
+                        <th>ZIP Code</th>
+                    </tr>
+                    <tr>
+                        <td valign="top" align="left" width="20%"> 
+                            <input type="text"
+                                    id="city"
+                                    name="city"
+                                    maxlength="30"
+                                    required>
+                        </td>
+                        <td valign="top" align="left" width="20%">
+                            <select>
+                                    <option value="Select">Select</option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="AK">Alaska</option>
+                                    <option value="AZ">Arizona</option>
+                                    <option value="AR">Arkansas</option>
+                                    <option value="CA">California</option>
+                                    <option value="CO">Colorado</option>
+                                    <option value="CT">Connecticut</option>
+                                    <option value="DE">Delaware</option>
+                                    <option value="DC">District Of Columbia</option>
+                                    <option value="FL">Florida</option>
+                                    <option value="GA">Georgia</option>
+                                    <option value="HI">Hawaii</option>
+                                    <option value="ID">Idaho</option>
+                                    <option value="IL">Illinois</option>
+                                    <option value="IN">Indiana</option>
+                                    <option value="IA">Iowa</option>
+                                    <option value="KS">Kansas</option>
+                                    <option value="KY">Kentucky</option>
+                                    <option value="LA">Louisiana</option>
+                                    <option value="ME">Maine</option>
+                                    <option value="MD">Maryland</option>
+                                    <option value="MA">Massachusetts</option>
+                                    <option value="MI">Michigan</option>
+                                    <option value="MN">Minnesota</option>
+                                    <option value="MS">Mississippi</option>
+                                    <option value="MO">Missouri</option>
+                                    <option value="MT">Montana</option>
+                                    <option value="NE">Nebraska</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="NH">New Hampshire</option>
+                                    <option value="NJ">New Jersey</option>
+                                    <option value="NM">New Mexico</option>
+                                    <option value="NY">New York</option>
+                                    <option value="NC">North Carolina</option>
+                                    <option value="ND">North Dakota</option>
+                                    <option value="OH">Ohio</option>
+                                    <option value="OK">Oklahoma</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="PA">Pennsylvania</option>
+                                    <option value="RI">Rhode Island</option>
+                                    <option value="SC">South Carolina</option>
+                                    <option value="SD">South Dakota</option>
+                                    <option value="TN">Tennessee</option>
+                                    <option value="TX">Texas</option>
+                                    <option value="UT">Utah</option>
+                                    <option value="VT">Vermont</option>
+                                    <option value="VA">Virginia</option>
+                                    <option value="WA">Washington</option>
+                                    <option value="WV">West Virginia</option>
+                                    <option value="WI">Wisconsin</option>
+                                    <option value="WY">Wyoming</option>
+                                    <option value="PR">Puerto Rico</option>
+                                </select>
+                        </td>
+                        <td valign="top" align="left" width="20%">
+                            <input type="text"
+                                    id="zip"
+                                    name="zip"
+                                    maxlength="5"
+                                    required
+									onblur="validatezip()"
+							>
+									<span class="error" id="ziperror"></span>
+                        </td>
+            </table> 
+            <table width=100%>
+                <tr valign="top" align="left" width="20%">
+                    <th>Email Address</th>
+                    <th>Username</th>
+					<th>Phone Number</th>
+                </tr>
+                <tr>
+                    <td valign="top" align="left" width="20%">
+                        <input type="email"
+                                id="email"
+                                name="email"
+                                required
+								onblur="validateemail()"
+								pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,20}$"
+						>
+								<span class="error" id="emailerror"> </span>
+                    </td>
+                    <td valign="top" align="left" width="20%">
+                        <input type="text"
+                                id="username"
+                                name="username"
+                                required
+                                maxlength="30"
+								onblur="validateUN()"
+                        >
+								<span class="error" id="UNerror"></span>
+                    </td>
+					<td>
+						<input type="phone"
+								id="phone"
+								name="phone"
+								required
+								pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+								onblur="validatephone()">
+					</td>
+							<span class="error" id="phoneerror"></span>
+					
+                </tr>
+            </table>
+            <table width=100%>
+                <tr valign="top" align="left" width="20%">
+                    <th>Password</th>
+                    <th>Retype Password</th>
+                </tr>
+                <tr>
+                    <td valign="top" align="left" width="20%">
+                        <input type="password"
+                                maxlength="8"
+                                required
+                                id="password"
+                                name="password"
+								onblur="validatepassword()"
+								onfocus="validatepassword()"
+								oninput="validatepassword()"
+                        >
+								<span class="error" id="passworderror"></span>
+                    </td>
+                    <td valign="top" align="left" width="20%">
+                        <input type="password"
+                                maxlength="8"
+                                required
+                                id="password2"
+                                name="password2"
+								onblur="checkpassword()"
+								oninput="checkpassword()"
+								onfocus="checkpassword()"
+                        >
+								<span class="error" id="passwordcheckerror"></span>
+                    </td>
+                </tr>
+            </table>
+            
+            <form style="text-align:center;">
+            <p>
+                Are you feeling any of the following?
+            </p>
+                <input type="checkbox"
+                        id="headache"
+                        name="symptons"
+                >
+                <label for="headache">Headache</label>
+                <input type="checkbox"
+                        id="itchythroat"
+                        name="symptons"
+                >
+                <label for="itchy throat">Itchy Throat<label>
+
+                <input type="checkbox"
+                        id="fever"
+                        name="symptons"
+                >
+                <label for="fever">Fever</label>
+
+                <input type="checkbox"
+                        id="dizziness"
+                        name="symptons"
+                >
+                <label for="dizziness">Dizziness</label>
+
+                <input type="checkbox"
+                        id="fatigue"
+                        name="symptons"
+                >
+                <label for="fatigue">Fatigue</label>
+               
+            </form>
+            <table>
+                <tr>
+                    <td class="td1"><label for="range">How good are you feeling?<br/>(1 being Very Bad and 5 being Very Good)</label></td>
+                    <td>
+	                     <input
+	                        type="range"
+	                        name="range"
+	                        id="range"
+                            min="1"
+                            max="5"
+                            value="0"
+                        />
+                    <span id="range-slider"></span>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td><label for="comments">Comments:</label></td>
+                    <td>
+                    <textarea id="comments" 
+                                name="comments" 
+                                rows="5" 
+                                cols="50"
+                                maxlength="20" 
+                                placeholder="Enter any additional information you would like to share"></textarea>
+                    </td>
+                </tr>
+            </table>
+            <form>
+                <p>
+                    Gender, select one from below
+                </p>
+                    <input type="radio"
+                            id="male"
+                            name="gender"
+                    >
+                    <label for="male">Male</label>
+
+                    <input type="radio"
+                            id="female"
+                            name="gender"
+                    >
+                    <label for="female">Female</label>
+
+                    <input type="radio"
+                            id="other"
+                            name="gender"
+                    >
+                    <label for="other">Other</label>
+
+            </form>
+            <form>
+                <p>
+                    Age Range, select one from below
+                </p>
+                    <input type="radio"
+                            id="tenorless"
+                            name="agerange"
+                    >
+                    <label for="tenorless">10 or less</label>
+
+                    <input type="radio"
+                            id="eleventotwentyone"
+                            name="agerange"
+                    >
+                    <label for="eleventotwentyone">11-21</label>
+
+                    <input type="radio"
+                            id="morethantwoone"
+                            name="agerange"
+                    >
+                    <label for="morethantwoone">21+</label>
+                    
+            </form> 
+            <form action="thankyoupageHW2.html">
+                <p>
+                    Marital Status, select one from below
+                </p>
+                    <input type="radio"
+                            id="single"
+                            name="maritalstatus"
+                    >
+                    <label for="single">Single</label>
+
+                    <input type="radio"
+                            id="married"
+                            name="maritalstatus"
+                    >
+                    <label for="married">Married</label>
+
+                    <input type="radio"
+                            id="divorced"
+                            name="maritalstatus"
+                    >
+                    <label for="divorced">Divorced</label>
+
+                    <input type="radio"
+                            id="other2"
+                            name="maritalstatus"
+                    >
+                    <label for="other2">Other</label>
+                    
+            
+                    <table>
+                        <tr>
+                            <td colspan="4">
+                                <center>
+                                    <input type="submit" name="submit">
+                                    <input type="reset" name="reset">
+									<input
+    										type="button"
+										    name="review"
+										    id="review"
+										    value="Review"
+										    onclick="CheckData()"
+									/>
+                                </center>
+								<center>
+   									 <p id="displayData"></p>
+								</center>
+                            </td>
+                    </tr>
+                </table>
+            </form>
+
+            <footer>
+                <p>Asclepea Hospital</p>
+                <p>1 Pallantium Ave</p>
+                <p>Santa Barbara, CA 93102</p>
+                <p><a href="hellohw2.html">Contact Us</a></p>
+            </footer>
+        <script src="HW2.js"></script>
+	</body>
+</html>
