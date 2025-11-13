@@ -1,1 +1,38 @@
+/*
+    Name: Simon Atencio Machado
+    File: Styles.css
+    Date created: November 13, 2025
+    Date last edit: November 14, 2025
+    Version: 1.
+    Description: CSS for Homework 3 for MIS 3371
+*/
 
+table {
+    background-color: aliceblue;
+    margin: auto;
+}
+form {
+    background-color:blanchedalmond
+}
+body {
+    align-items: center;
+    margin: 3%;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1, h2 {
+    font-family: 'Times New Roman', Times, serif;
+}
+table.output,
+tr.output,
+td.output 
+{
+    width: 1000px;
+    background-color: blue;
+    padding: 5px;
+    border-spacing: 5px;
+    border-radius: 20px;
+    color: yellow;
+}
