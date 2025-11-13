@@ -9,10 +9,10 @@
 -->
 <html lang="en">
     <head>
-        <title> Homework 2 MIS 3371 SAAM</title>
+        <title> Homework 3 MIS 3371 SAAM</title>
         <link rel="stylesheet" href="Styles-HW3.css">
     </head>
-    <body name="wholeform" id="wholeform">
+    <body>
         <header>
             <table width=100%>
                 <tr>
@@ -33,6 +33,7 @@
             </table>
         </header>
         <h2> Registration Form </h2>
+		<form name="form1" id="form1">
             <table width=100%>
                 <tr valign="top" align="left" width="20%">
                     <th>First Name</th>
@@ -101,7 +102,8 @@
                         </td>
                     </tr>
             </table>
-            <form valign="top" align="left" width="20%">
+		</form>
+            <form valign="top" align="left" width="20%" name="form2" id="form2">
                 <label for="address">Address</label><br>
                 <input type="text" 
                 id="address" 
@@ -123,6 +125,7 @@
 				<br>
 				<span class="error" id="address2error"></span>
             </form>
+		<form name="form3" id="form3">
             <table width=100%>
                     <tr valign="top" align="left" width="20%">
                         <th>City</th>
@@ -276,8 +279,8 @@
                     </td>
                 </tr>
             </table>
-            
-            <form style="text-align:center;">
+		</form>
+            <form style="text-align:center;" name="form4" id="form4">
             <p>
                 Are you feeling any of the following?
             </p>
@@ -310,7 +313,8 @@
                 >
                 <label for="fatigue">Fatigue</label>
                
-            </form>
+				</form>
+			<form name="form5" id="form5">
             <table>
                 <tr>
                     <td class="td1"><label for="range">How good are you feeling?<br/>(1 being Very Bad and 5 being Very Good)</label></td>
@@ -340,7 +344,8 @@
                     </td>
                 </tr>
             </table>
-            <form>
+			</form>
+            <form name="form6" id="form6">
                 <p>
                     Gender, select one from below
                 </p>
@@ -363,7 +368,7 @@
                     <label for="other">Other</label>
 
             </form>
-            <form>
+            <form name="form7" id="form7">
                 <p>
                     Age Range, select one from below
                 </p>
@@ -386,7 +391,7 @@
                     <label for="morethantwoone">21+</label>
                     
             </form> 
-            <form action="thankyouhw3.html">
+            <form action="thankyouhw3.html" name="form8" id="form8">
                 <p>
                     Marital Status, select one from below
                 </p>
