@@ -293,3 +293,63 @@ function validatecity() {
         return true;
     }
 }
+function validatefname() {
+    fname = document.getElementById("fname").value.trim();
+    var namePattern = /^[a-zA-Z'-]+$/;
+    if (fname == "") {
+        document.getElementById("fnameerror").innerHTML = "First name is required"
+        return false;
+    } else if (fname != "") {
+        if (!fname.match(namePattern)) {
+        document.getElementById("fnameerror").innerHTML = "Invalid character entered";
+        return false;
+    } else if (fname.length < 2) {
+        document.getElementById("fnameerror").innerHTML = "Too short";
+        return false;
+    } else if (fname.length > 30) {
+        document.getElementById("fnameerror").innerHTML = "Too long";
+        return false;
+    } else {
+        document.getElementById("fnameerror").innerHTML = "";
+        return true;
+    }
+}
+}
+function validatemidnitial() {
+    mini = document.getElementById("midinitial").value;
+    var namePattern = /^[A-Z]+$/;
+
+    mini = mini.toUpperCase();
+    document.getElementById("mini").value = mini;
+
+    if (!mini.match(namePattern)) {
+        document.getElementById("miderror").innerHTML = 
+        "Invalid";
+        return false;
+    } else {
+        document.getElementById("miderror").innerHTML = "";
+        return true;
+    }
+}
+function validatelname() {
+    fname = document.getElementById("lname").value.trim();
+    var namePattern = /^[a-zA-Z'-]+$/;
+    if (fname == "") {
+        document.getElementById("lnameerror").innerHTML = "First name is required"
+        return false;
+    } else if (fname != "") {
+        if (!fname.match(namePattern)) {
+        document.getElementById("lnameerror").innerHTML = "Invalid character entered";
+        return false;
+    } else if (fname.length < 2) {
+        document.getElementById("lnameerror").innerHTML = "Too short";
+        return false;
+    } else if (fname.length > 30) {
+        document.getElementById("lnameerror").innerHTML = "Too long";
+        return false;
+    } else {
+        document.getElementById("lnameerror").innerHTML = "";
+        return true;
+    }
+}
+}
