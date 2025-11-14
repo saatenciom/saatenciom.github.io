@@ -225,3 +225,71 @@ function CheckData()
     output += "</table>";
     document.getElementById("displayData").innerHTML = output;
 }
+function Alert() {
+    var alertBox = document.getElementById("alertfield");
+    var closeAlert = document.getElementById("closealert");
+
+    alertBox.style.display = "block";
+    closeAlert.onclick = function() {
+        alertBox.style.display = "none";
+    };
+}
+function validateEverything() {
+    let valid = true;
+
+    if (!validatefname()) {
+        valid = false;
+    }
+    if (!validatemidnitial()) {
+        valid = false;
+    }
+    if (!validatelname()) {
+        valid = false;
+    }
+    if (!validatedob()) {
+        valid = false;
+    }
+    if (!validateSSN()) {
+        valid = false;
+    }
+    if (!validateaddress()) {
+        valid = false;
+    }
+    if (!validatecity()) {
+        valid = false;
+    }
+    if (!validatezip()) {
+        valid = false;
+    }
+    if (!validateemail()) {
+        valid = false;
+    }
+    if (!validatephone()) {
+        valid = false;
+    }
+    if (!validateUN()) {
+        valid = false;
+    }
+    if (!validatepassword()) {
+        valid = false;
+    }
+    if (!checkpassword()) {
+        valid = false;
+    }
+     if (valid) {
+         document.getElementById("submit").disabled = false;
+     } else{
+        Alert();
+     }
+ }
+function validatecity() {
+    city = document.getElementById("city").value.trim();
+
+    if (!city) {
+        document.getElementById("cityerror").innerHTML = "City is a required field";
+        return false;
+    } else {
+        document.getElementById("cityerror").innerHTML = "";
+        return true;
+    }
+}
