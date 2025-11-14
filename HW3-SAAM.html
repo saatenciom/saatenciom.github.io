@@ -433,6 +433,12 @@
 										    value="Review"
 										    onclick="CheckData()"
 									/>
+									<input type="button" 
+											name="validate" 
+											id="validate" 
+											value="Validate"  
+											onclick="validateData()"
+									/>
                                 </center>
 								<center>
    									 <p id="displayData"></p>
@@ -441,6 +447,12 @@
                     </tr>
                 </table>
             </form>
+			<div id="alertfield">
+    			<div id="alertcontent">
+        			<h4>Required fields cannot be empty.</h4>
+        				<button id="alertmessage">Thanks!</button>
+    			</div>
+			</div>
 
             <footer>
                 <p>Asclepea Hospital</p>
